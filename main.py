@@ -48,6 +48,16 @@ def set_game_region():
     GAME_REGION = (game_dimenstions[0]-600, game_dimenstions[1]-30, 1000, 600)  # The top left corner of game is 600 px away from where top left of image and 30 px above.
     logging.debug("Set GAME_REGION to: " + str(GAME_REGION) + "")
 
+def block_to_coors(block):
+    """
+    Determines what the coors are of a block given.
+    Input: Block indices
+    Output: (x,y) Otherwise known as the coordinates on the screen of the blocks
+    """
+class Block():
+    """Provides the template for what a block should be and what values it holds.
+
+
 
 def main():
     """
