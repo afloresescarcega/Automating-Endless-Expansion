@@ -29,7 +29,7 @@ def find_game_region():
     """
     logging.debug('About to take a screenshot and look for top_right_corner.png')
     coors = pyautogui.locateOnScreen("images/top_right_corner.png")
-    if region is None:
+    if coors is None:
         raise Exception('The game was not found on this screen. Is it invisible?')
     return (coors[0],coors[1])
 
@@ -39,6 +39,7 @@ def main():
     inputs: none
     outputs: none
     """
+    pyautogui.screenshot().save('test.png')
     print find_game_region()
 
 if __name__ == "__main__":
