@@ -21,6 +21,9 @@ __status__ = "Development"
 
 # game located at http://www.kongregate.com/games/Volch/endless-expansion?haref=HP_TGTM_endless-expansion
 
+GAME_REGION = (0, 0, 1000, 600)  # The x and y coordinates of the game window. 1000 is the width and 600 the height.
+
+
 def find_game_region():
     """
     Uses image top_right_corner.png to find the coordinates of the game.
@@ -31,7 +34,20 @@ def find_game_region():
     coors = pyautogui.locateOnScreen("images/top_right_corner.png")
     if coors is None:
         raise Exception('The game was not found on this screen. Is it invisible?')
-    return (coors[0],coors[1])
+    return (coors[0], coors[1])
+
+
+def set_game_region():
+    """x
+    Sets the constant GAME_REGION to whatever find_game_region finds it at.
+    Input: None
+    Output: None
+    """
+    game_dimenstions = find_game_region()
+    global GAME_REGION
+    GAME_REGION = (game_dimenstions[0]-600, game_dimenstions[1]-30, 1000, 600)  # The top left corner of game is 600 px away from where top left of image and 30 px above.
+    logging.debug("Set GAME_REGION to: " + str(GAME_REGION) + "")
+
 
 def main():
     """
@@ -39,7 +55,8 @@ def main():
     inputs: none
     outputs: none
     """
-    print find_game_region()
+    set_game_region()
+    print GAME_REGION
 
 if __name__ == "__main__":
     main()
