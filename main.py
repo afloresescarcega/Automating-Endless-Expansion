@@ -17,12 +17,23 @@ __status__ = "Development"
 
 # game located at http://www.kongregate.com/games/Volch/endless-expansion?haref=HP_TGTM_endless-expansion
 
+def find_game_region():
+    """
+    Finds the top left coordinates of the game by substracting (700 + 300) from the location of the game. 
+    The 300 comes from the width of the top_right_corner.png file that is used to locate the top right corner.
+    Input: None.
+    Output: the top left coordinates. Two elements in a tuple.
+
+    coors = pyautogui.locateOnScreen("images/top_right_corner.png")
+    return (coors[0],coors[1])
+
 def main():
     """
     Just now runs main()
     inputs: none
     outputs: none
     """
-    pass
+    print find_game_region()
+
 if __name__ == "__main__":
     main()
