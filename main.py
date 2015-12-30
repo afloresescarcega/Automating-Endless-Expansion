@@ -4,7 +4,11 @@ This is the main file for a script that reads info off a game on kongregate.com 
 
 """
 # import line/s for builtin modules
-import pyautogui
+import pyautogui, logging, time
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s.%(msecs)03d: %(message)s', datefmt='%H:%M:%S')
+
+# logging.disable(logging.DEBUG) # uncomment to block debug log messages
 
 __author__ = "Alex Flores Escarcega"
 __copyright__ = "Copyright 2007, Alex Flores Escarcega"
