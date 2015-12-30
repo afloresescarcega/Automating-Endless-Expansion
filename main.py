@@ -23,7 +23,9 @@ def find_game_region():
     Inputs: none
     Outputs: *****the output the locateOnScreen******
     """
-    
+
+    coors = pyautogui.locateOnScreen("images/top_right_corner.png")
+    return (coors[0],coors[1])
 
 def main():
     """
@@ -31,6 +33,7 @@ def main():
     inputs: none
     outputs: none
     """
-    pass
+    print find_game_region()
+
 if __name__ == "__main__":
     main()
