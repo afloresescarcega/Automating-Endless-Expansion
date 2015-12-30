@@ -39,7 +39,6 @@ def main():
     inputs: none
     outputs: none
     """
-    pyautogui.screenshot().save('test.png')
     print find_game_region()
 
 if __name__ == "__main__":
