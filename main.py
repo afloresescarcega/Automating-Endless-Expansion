@@ -4,7 +4,7 @@ This is the main file for a script that reads info off a game on kongregate.com 
 
 """
 # import line/s for builtin modules
-# import pyautogui
+import pyautogui
 
 __author__ = "Alex Flores Escarcega"
 __copyright__ = "Copyright 2007, Alex Flores Escarcega"
@@ -16,6 +16,14 @@ __email__ = "alex.floresescar@gmail.com"
 __status__ = "Development"
 
 # game located at http://www.kongregate.com/games/Volch/endless-expansion?haref=HP_TGTM_endless-expansion
+
+def find_game_region():
+    """
+    Uses image top_right_corner.png to find the coordinates of the game.
+    Inputs: none
+    Outputs: *****the output the locateOnScreen******
+    """
+    
 
 def main():
     """
